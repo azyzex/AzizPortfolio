@@ -121,8 +121,9 @@
     loop: true,
   });
 
-  // EmailJS function
-  function sendMail() {
+  document.getElementById("contactForm").onsubmit = function (event) {
+    event.preventDefault(); // Prevent page reload
+
     let parms = {
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
@@ -139,11 +140,5 @@
         console.error("Unfortunately failed to send email:", error);
         alert("Failed to send email.");
       });
-  }
-
-  // Bind sendMail to form submission
-  $("#contact-form").on("submit", function (event) {
-    event.preventDefault(); // Prevent form from submitting the traditional way
-    sendMail(); // Call the sendMail function to handle the email sending
-  });
+  };
 })(jQuery);
