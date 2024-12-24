@@ -120,6 +120,8 @@
     dots: true,
     loop: true,
   });
+
+  // EmailJS function
   function sendMail() {
     let parms = {
       name: document.getElementById("name").value,
@@ -127,19 +129,21 @@
       subject: document.getElementById("subject").value,
       message: document.getElementById("message").value,
     };
+
     emailjs
       .send("service_2mkcoga", "template_m0tecdp", parms)
       .then(function () {
         alert("Email Has Been Sent!");
       })
       .catch(function (error) {
-        console.error("unfortunately Failed to send email:", error);
+        console.error("Unfortunately failed to send email:", error);
         alert("Failed to send email.");
       });
   }
-  // Bind sendMail to the form submission
+
+  // Bind sendMail to form submission
   $("#contact-form").on("submit", function (event) {
-    event.preventDefault(); // Prevent form from reloading the page
-    sendMail(); // Call the sendMail function
+    event.preventDefault(); // Prevent form from submitting the traditional way
+    sendMail(); // Call the sendMail function to handle the email sending
   });
 })(jQuery);
