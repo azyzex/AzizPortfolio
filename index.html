@@ -4,6 +4,15 @@
 <html lang="en">
 
 <head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "LAhHyybbgrDjvHc5v",
+        });
+    })();
+    </script>
     <meta charset="utf-8">
     <title>Aziz's Portfolio</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -548,7 +557,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" onclick="sendMail()">Send Message</button>
                             </div>
                         </div>
                     </form>

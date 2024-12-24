@@ -120,36 +120,21 @@
     dots: true,
     loop: true,
   });
-
-  // Handle form submission
-  document
-    .getElementById("contact-form") // Correct form ID here
-    .addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent form from reloading page
-
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const subject = document.getElementById("subject").value;
-      const message = document.getElementById("message").value;
-
-      // Initialize EmailJS
-      emailjs.init("LAhHyybbgrDjvHc5v"); // Replace with your actual user ID from EmailJS
-
-      // Send email using EmailJS service and template
-      emailjs
-        .send("service_2mkcoga", "template_m0tecdp", {
-          name: name,
-          email: email,
-          subject: subject,
-          message: message,
-        })
-        .then(function (response) {
-          console.log("Email sent successfully!", response);
-          alert("Message sent successfully!");
-        })
-        .catch(function (error) {
-          console.log("Failed to send email:", error);
-          alert("Failed to send message.");
-        });
-    });
+  function sendMail() {
+    let parms = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value,
+    };
+    emailjs
+      .send("service_2mkcoga", "template_m0tecdp", parms)
+      .then(function () {
+        alert("Email Has Been Sent!");
+      })
+      .catch(function (error) {
+        console.error("Failed to send email:", error);
+        alert("Failed to send email.");
+      });
+  }
 })(jQuery);
