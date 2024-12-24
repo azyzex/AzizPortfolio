@@ -133,8 +133,13 @@
         alert("Email Has Been Sent!");
       })
       .catch(function (error) {
-        console.error("Failed to send email:", error);
+        console.error("unfortunately Failed to send email:", error);
         alert("Failed to send email.");
       });
   }
+  // Bind sendMail to the form submission
+  $("#contact-form").on("submit", function (event) {
+    event.preventDefault(); // Prevent form from reloading the page
+    sendMail(); // Call the sendMail function
+  });
 })(jQuery);
