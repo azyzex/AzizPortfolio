@@ -120,25 +120,4 @@
     dots: true,
     loop: true,
   });
-
-  document.getElementById("contactForm").onsubmit = function (event) {
-    event.preventDefault(); // Prevent page reload
-
-    let parms = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
-    };
-
-    emailjs
-      .send("service_2mkcoga", "template_m0tecdp", parms)
-      .then(function () {
-        alert("Email Has Been Sent!");
-      })
-      .catch(function (error) {
-        console.error("Unfortunately failed to send email:", error);
-        alert("Failed to send email.");
-      });
-  };
 })(jQuery);
