@@ -278,6 +278,7 @@
     position: relative;
 }
 
+/*** Project Portfolio ***/
 .portfolio-overlay {
     position: absolute;
     top: 0;
@@ -297,8 +298,8 @@
     font-size: 2rem;
     font-weight: bold;
     color: #ffc107; /* Yellow text */
-    font-family: 'Open Sans', sans-serif;
-
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif; /* Professional font */
     text-align: center;
     z-index: 2; /* Place title above the overlay */
     position: relative; /* Ensures it respects the z-index */
