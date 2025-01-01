@@ -256,6 +256,7 @@
 }
 
 
+
 /*** Project Portfolio ***/
 #portfolio-flters li {
     display: inline-block;
@@ -272,9 +273,41 @@
     border-color: var(--primary);
 }
 
+
 .portfolio-img {
     position: relative;
 }
+
+/*** Project Portfolio ***/
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(98, 68, 197, 0.9);
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    opacity: 0;
+    transition: .5s;
+    z-index: 1; /* Ensure overlay is below the title */
+}
+
+.portfolio-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffc107; /* Yellow text */
+    font-family: 'Open Sans', sans-serif; /* Professional font */
+    text-align: center;
+    z-index: 2; /* Place title above the overlay */
+    position: relative; /* Ensures it respects the z-index */
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 0.85;
+}
+
 
 .portfolio-btn {
     position: absolute;
